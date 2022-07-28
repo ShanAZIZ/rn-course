@@ -3,7 +3,6 @@
     "react",
     "react-native"
   ],
-  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
