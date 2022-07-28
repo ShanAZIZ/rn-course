@@ -1,22 +1,42 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
+import {purpleBg, white} from "./constants/colors";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto"></StatusBar>
+      <View style={styles.inputContainer}>
+        <TextInput style={styles.inputText} placeholder="Votre objectif"/>
+        <Button title="Ajouter"/>
+      </View>
+      <View>
+        <Text style={styles.text}>
+          Liste des objectifs
+        </Text>
+      </View>
     </View>
   );
 }
 
-const bgColor = '#fff';
-
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
-    backgroundColor: bgColor,
+    backgroundColor: purpleBg,
     flex: 1,
-    justifyContent: 'center',
+    padding: 50,
+  },
+  inputContainer: {
+    color: white,
+    flexDirection: "row",
+    justifyContent: 'space-between',
+    paddingTop: 40
+  },
+  inputText: {
+    borderColor: white,
+    borderWidth: 1,
+    color: white,
+    marginRight: 8,
+    width: '80%',
+  },
+  text: {
+    color: white,
   },
 });
