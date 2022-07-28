@@ -5,16 +5,18 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <StatusBar style="auto"></StatusBar>
     </View>
   );
 }
 
+const bgColor = '#fff';
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
+    backgroundColor: bgColor,
+    flex: 1,
     justifyContent: 'center',
   },
 });

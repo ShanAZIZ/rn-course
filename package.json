@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@babel/eslint-parser": "^7.18.9",
     "@types/react": "~17.0.21",
     "@types/react-native": "~0.66.13",
     "eslint": "^8.20.0",
