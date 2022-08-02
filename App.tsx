@@ -7,10 +7,24 @@ import GoalInput from "./components/GoalInput";
 export default function App() {
 
 
-  const [goalList, addGoalToList] = useState<string[]>([]);
+  const [goalList, setGoalList] = useState<string[]>([]);
 
   function addGoalHandler(enteredGoalText: string){
-    addGoalToList((currentGoalList) => [...currentGoalList, enteredGoalText])
+    setGoalList((currentGoalList) => {
+      if(currentGoalList.includes(enteredGoalText)){
+        return currentGoalList;
+      }
+      if(enteredGoalText.length === 0) {
+        return currentGoalList;
+      }
+      return [...currentGoalList, enteredGoalText]
+    })
+  }
+
+  function deleteGoalHandler(text: string) {
+    setGoalList((currentGoalList) => {
+      return currentGoalList.filter((goal) => goal !== text);
+    })
   }
 
   return (
@@ -20,7 +34,7 @@ export default function App() {
         <FlatList
           data={goalList}
           renderItem={ (itemData) => {
-            return <GoalItem text={itemData.item}></GoalItem>;
+            return <GoalItem onDeleteItem={deleteGoalHandler} text={itemData.item}></GoalItem>;
           }}
           alwaysBounceVertical={false}>
         </FlatList>
